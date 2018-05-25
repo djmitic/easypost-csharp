@@ -11,10 +11,10 @@ namespace EasyPost {
     public class Client {
         public string version;
 
-        internal RestClient client;
-        internal ClientConfiguration configuration;
+        public RestClient client;
+        public ClientConfiguration configuration;
 
-        internal Client(ClientConfiguration clientConfiguration) {
+        public Client(ClientConfiguration clientConfiguration) {
             System.Net.ServicePointManager.SecurityProtocol = Security.GetProtocol();
 
             if (clientConfiguration == null) throw new ArgumentNullException("clientConfiguration");
@@ -58,7 +58,7 @@ namespace EasyPost {
             return response.Data;
         }
 
-        internal RestRequest PrepareRequest(Request request) {
+        public RestRequest PrepareRequest(Request request) {
             RestRequest restRequest = (RestRequest)request;
 
             restRequest.AddHeader("user_agent", string.Concat("EasyPost/v2 CSharp/", version));

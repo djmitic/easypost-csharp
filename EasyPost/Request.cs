@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace EasyPost {
     public class Request {
-        internal RestRequest restRequest;
+        public RestRequest restRequest;
 
         public string RootElement {
             get { return this.restRequest.RootElement; }

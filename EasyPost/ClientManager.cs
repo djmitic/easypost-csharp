@@ -7,7 +7,7 @@ namespace EasyPost {
     public static class ClientManager {
         private static Func<Client> getCurrent;
 
-        internal static Client Build() {
+        public static Client Build() {
             if (getCurrent == null)
                 throw new ClientNotConfigured();
             return getCurrent();

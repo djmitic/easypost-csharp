@@ -32,7 +32,7 @@
     <DocumentationFile>..\lib\net40\EasyPost.Net40.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>EasyPost.pfx</AssemblyOriginatorKeyFile>
