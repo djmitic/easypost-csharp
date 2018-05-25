@@ -6,15 +6,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Linq;
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleTo("EasyPost.NetCore20.Tests")]
 
 namespace EasyPost {
     public class Client {
         public string version;
 
-        public RestClient client;
-        public ClientConfiguration configuration;
+        internal RestClient client;
+        internal ClientConfiguration configuration;
 
-        public Client(ClientConfiguration clientConfiguration) {
+        internal Client(ClientConfiguration clientConfiguration) {
             System.Net.ServicePointManager.SecurityProtocol = Security.GetProtocol();
 
             if (clientConfiguration == null) throw new ArgumentNullException("clientConfiguration");
@@ -58,7 +60,7 @@ namespace EasyPost {
             return response.Data;
         }
 
-        public RestRequest PrepareRequest(Request request) {
+        internal RestRequest PrepareRequest(Request request) {
             RestRequest restRequest = (RestRequest)request;
 
             restRequest.AddHeader("user_agent", string.Concat("EasyPost/v2 CSharp/", version));
